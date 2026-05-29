@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460">
+  <rect width="900" height="460" fill="#f4dfb9"/>
+  <rect x="170" y="180" width="560" height="190" rx="28" fill="#e8e1d2" stroke="#4f463b" stroke-width="10"/>
+  <rect x="245" y="95" width="330" height="135" rx="12" fill="#fffdf4" stroke="#4f463b" stroke-width="8"/>
+  <path d="M282 130h250M282 165h190M282 200h230" stroke="#9b8b73" stroke-width="10" stroke-linecap="round"/>
+  <rect x="560" y="210" width="115" height="55" rx="12" fill="#33291f"/>
+  <circle cx="245" cy="265" r="22" fill="#547b8f"/><circle cx="310" cy="265" r="22" fill="#547b8f"/><circle cx="375" cy="265" r="22" fill="#547b8f"/>
+  <rect x="215" y="318" width="430" height="26" rx="13" fill="#fffdf4" stroke="#4f463b" stroke-width="6"/>
+  <path d="M640 164c65-4 92 33 79 83" fill="none" stroke="#4f463b" stroke-width="16" stroke-linecap="round"/>
+  <text x="450" y="425" text-anchor="middle" font-family="Nunito, Arial" font-size="30" font-weight="900" fill="#5d4734">fax: teléfono + escáner + impresora</text>
+</svg>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Semana 3 · Norman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-page="semana3">
+  <header class="site-header"><a class="brand scribble-link" href="../index.html">Mi diario de HCI</a><nav class="week-nav" aria-label="Navegación principal"><a href="../index.html" data-nav="inicio">Inicio</a><a href="semana1.html" data-nav="semana1">S1</a><a href="semana2.html" data-nav="semana2">S2</a><a href="semana3.html" data-nav="semana3">S3</a><a href="semana4.html" data-nav="semana4">S4</a><a href="semana5.html" data-nav="semana5">S5</a><a href="semana6.html" data-nav="semana6">S6</a><a href="semana7.html" data-nav="semana7">S7</a><a href="semana8.html" data-nav="semana8">S8</a></nav></header>
+  <main>
+    <section class="cover page-title">
+      <p class="hand-note">Semana 3</p>
+      <h1>Modelo de Norman</h1>
+      <p>Para esta semana pensé en Android Studio. El semestre pasado programar ahí fue un dolor de cabeza: errores constantes, Gradle fallando y una vez, después de limpiar caché, el IDE dejó de reconocer mi proyecto. Pasé unas 3 o 4 horas intentando recuperarlo.</p>
+    </section>
+
+    <section class="section-block">
+      <h2>Las siete etapas</h2>
+      <ol class="norman-list">
+        <li><strong>Formar la meta.</strong> Yo quería que mi proyecto de Android compilara y corriera. El problema empezó como ejecución, porque la herramienta no me dejaba avanzar hacia una meta simple.</li>
+        <li><strong>Formar la intención.</strong> Decidí limpiar Gradle o reconstruir el proyecto, porque eso a veces solucionaba errores. Aquí todavía estaba en ejecución: sabía qué quería, pero el camino no era confiable.</li>
+        <li><strong>Especificar la acción.</strong> Busqué opciones como limpiar caché, rebuild y sync. Falló porque las opciones parecían técnicas y poco claras; no sabía cuál era segura ni qué podía romper.</li>
+        <li><strong>Ejecutar la acción.</strong> Limpié el caché. Después Android Studio dejó de reconocer bien el proyecto. Esta fue la falla más fuerte de ejecución: hice una acción permitida por el sistema, pero el resultado fue dañino.</li>
+        <li><strong>Percibir el estado del sistema.</strong> Vi errores, archivos sin reconocer y mensajes raros. El sistema sí mostraba información, pero demasiada y poco humana.</li>
+        <li><strong>Interpretar el estado del sistema.</strong> No entendía si el error era mío, de Gradle, del IDE o de configuración. Aquí falló la evaluación, porque no podía traducir los mensajes a una causa clara.</li>
+        <li><strong>Evaluar el resultado.</strong> El resultado no coincidió con mi meta. En vez de arreglar el proyecto, terminé perdiendo horas. Para mí fue una mala experiencia tanto de ejecución como de evaluación.</li>
+      </ol>
+    </section>
+  </main>
+  <button class="back-top" type="button" aria-label="Volver arriba">↑</button><footer>Diario de HCI</footer><script src="../js/main.js"></script>
+</body>
+</html>

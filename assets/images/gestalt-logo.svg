@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <rect width="640" height="420" fill="#f4dfb9"/>
+  <rect x="182" y="78" width="230" height="250" rx="22" fill="#fff8e9" stroke="#6b5441" stroke-width="8"/>
+  <path d="M410 140c70 8 67 112-3 120" fill="none" stroke="#6b5441" stroke-width="18" stroke-linecap="round"/>
+  <path d="M252 152c23-40 90-40 115 0M245 248c29 38 92 37 122 0" fill="none" stroke="#c95f51" stroke-width="18" stroke-linecap="round" stroke-dasharray="80 34"/>
+  <circle cx="270" cy="198" r="13" fill="#33291f"/><circle cx="346" cy="198" r="13" fill="#33291f"/>
+  <text x="320" y="370" text-anchor="middle" font-family="Nunito, Arial" font-size="26" font-weight="800" fill="#5d4734">cierre: completo la forma</text>
+</svg>

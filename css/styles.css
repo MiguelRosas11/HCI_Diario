@@ -1,0 +1,429 @@
+:root {
+  --paper: #f6edda;
+  --paper-deep: #eadcc0;
+  --ink: #33291f;
+  --muted: #735f4b;
+  --line: rgba(93, 72, 48, .18);
+  --red: #c95f51;
+  --blue: #547b8f;
+  --green: #6f8f68;
+  --yellow: #e4bd58;
+  --shadow: 0 18px 40px rgba(70, 48, 23, .16);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Nunito", system-ui, sans-serif;
+  background:
+    linear-gradient(90deg, transparent 0 4.2rem, rgba(201, 95, 81, .24) 4.25rem, transparent 4.35rem),
+    repeating-linear-gradient(0deg, var(--paper) 0 2.15rem, var(--line) 2.2rem 2.25rem);
+  min-height: 100vh;
+}
+
+a { color: inherit; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: .8rem clamp(1rem, 4vw, 3rem);
+  background: rgba(246, 237, 218, .92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.week-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem .55rem;
+  justify-content: flex-end;
+}
+
+.week-nav a, .scribble-link {
+  position: relative;
+  display: inline-block;
+  padding: .25rem .1rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform .2s ease, font-weight .2s ease, color .2s ease;
+}
+
+.week-nav a::after, .scribble-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: .1rem;
+  width: 100%;
+  height: .35rem;
+  background: url("../assets/icons/underline.svg") center / 100% 100% no-repeat;
+  opacity: 0;
+  transform: scaleX(.55) rotate(-1deg);
+  transform-origin: left;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.week-nav a:hover, .week-nav a.active, .scribble-link:hover {
+  color: #1d5368;
+  transform: translateY(-2px) rotate(-1deg);
+}
+
+.week-nav a:hover::after, .week-nav a.active::after, .scribble-link:hover::after {
+  opacity: 1;
+  transform: scaleX(1) rotate(-1deg);
+}
+
+main {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 2rem auto 4rem;
+}
+
+.cover, .paper-panel, .section-block, .entry-card {
+  position: relative;
+  background: rgba(255, 250, 238, .88);
+  border: 1px solid rgba(117, 88, 51, .18);
+  box-shadow: var(--shadow);
+}
+
+.cover {
+  min-height: 62vh;
+  display: grid;
+  align-content: center;
+  padding: clamp(2rem, 7vw, 5rem);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cover::before, .paper-panel::before, .section-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 16%, rgba(196, 95, 72, .08), transparent 12rem),
+    radial-gradient(circle at 82% 70%, rgba(84, 123, 143, .09), transparent 10rem);
+}
+
+.tape {
+  position: absolute;
+  width: 7rem;
+  height: 2rem;
+  background: rgba(229, 197, 123, .55);
+  box-shadow: 0 4px 10px rgba(50, 35, 14, .12);
+  transform: rotate(-7deg);
+}
+
+.tape-left { top: 1.2rem; left: 2rem; }
+.tape-right { top: 1.7rem; right: 2rem; transform: rotate(8deg); }
+
+.hand-note {
+  margin: 0 0 .8rem;
+  font-family: "Caveat", cursive;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--red);
+}
+
+h1, h2, h3 {
+  margin: 0 0 1rem;
+  line-height: 1.05;
+}
+
+h1 {
+  font-family: "Caveat", cursive;
+  font-size: clamp(4rem, 12vw, 7.5rem);
+}
+
+h2 {
+  font-family: "Caveat", cursive;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p, li {
+  font-size: 1.05rem;
+  line-height: 1.72;
+}
+
+.hero p { max-width: 720px; }
+
+.paper-button, .note-link {
+  width: fit-content;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: .8rem 1.05rem;
+  border: 2px solid var(--ink);
+  border-radius: 7px 5px 8px 4px;
+  background: #fff4c7;
+  color: var(--ink);
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 4px 5px 0 rgba(51, 41, 31, .22);
+  transition: transform .2s ease, box-shadow .2s ease, font-weight .2s ease;
+}
+
+.paper-button:hover, .note-link:hover {
+  transform: translate(2px, 2px) rotate(-1deg);
+  box-shadow: 2px 3px 0 rgba(51, 41, 31, .22);
+}
+
+.section-block, .paper-panel {
+  margin-top: 2rem;
+  padding: clamp(1.4rem, 4vw, 2.4rem);
+  border-radius: 8px;
+}
+
+.week-grid, .object-grid, .logo-grid, .delivery-menu {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.week-card, .entry-card {
+  min-height: 170px;
+  padding: 1.1rem;
+  border-radius: 6px;
+  background: #fffaf0;
+  border: 1px solid rgba(68, 45, 25, .18);
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(62, 40, 20, .1);
+  transform: rotate(var(--tilt, -1deg));
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.week-card:nth-child(even), .entry-card:nth-child(even) { --tilt: 1deg; }
+
+.week-card:hover {
+  transform: translateY(-5px) rotate(0);
+  box-shadow: 0 14px 24px rgba(62, 40, 20, .16);
+}
+
+.week-card span, .tag {
+  display: inline-block;
+  margin-bottom: .55rem;
+  padding: .15rem .45rem;
+  background: rgba(84, 123, 143, .15);
+  border-radius: 999px;
+  color: #345969;
+  font-size: .85rem;
+  font-weight: 900;
+}
+
+.week-card strong {
+  display: block;
+  font-family: "Caveat", cursive;
+  font-size: 2rem;
+}
+
+.week-card small {
+  display: block;
+  margin-top: .35rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.page-title {
+  padding: clamp(1.6rem, 5vw, 3rem);
+  border-radius: 8px;
+}
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  margin-top: 1rem;
+}
+
+.meta-row span {
+  padding: .35rem .65rem;
+  border: 1px dashed rgba(51, 41, 31, .35);
+  background: rgba(255, 255, 255, .45);
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.object-grid, .logo-grid { grid-template-columns: repeat(3, 1fr); }
+
+.entry-card img, .photo-frame img, .logo-card img, .fax-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+  background: #f3e2bd;
+}
+
+.photo-frame {
+  max-width: 620px;
+  margin: 1.5rem auto;
+  padding: 1rem 1rem 3.3rem;
+  background: #fffdf7;
+  border: 1px solid rgba(51, 41, 31, .16);
+  box-shadow: var(--shadow);
+  transform: rotate(-1deg);
+}
+
+.photo-frame figcaption {
+  margin-top: .8rem;
+  text-align: center;
+  font-family: "Caveat", cursive;
+  font-size: 1.7rem;
+}
+
+.norman-list {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: steps;
+}
+
+.norman-list li {
+  counter-increment: steps;
+  padding: 1rem 1rem 1rem 4rem;
+  background: rgba(255, 250, 240, .75);
+  border-left: 5px solid var(--blue);
+  border-radius: 6px;
+  position: relative;
+}
+
+.norman-list li::before {
+  content: counter(steps);
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--yellow);
+  font-weight: 900;
+}
+
+.advice {
+  border-left: 6px solid var(--green);
+  padding: 1rem;
+  background: rgba(111, 143, 104, .12);
+  border-radius: 6px;
+}
+
+.logo-card {
+  padding: 1rem;
+  background: #fffaf0;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+}
+
+.logo-collage {
+  min-height: 370px;
+  display: grid;
+  grid-template-columns: 1.1fr .85fr 1fr;
+  align-items: center;
+  gap: clamp(.7rem, 3vw, 1.6rem);
+}
+
+.logo-polaroid {
+  margin: 0;
+  padding: .9rem .9rem 3rem;
+  background: #fffdf7;
+  border: 1px solid rgba(51, 41, 31, .16);
+  box-shadow: 0 16px 28px rgba(62, 40, 20, .18);
+}
+
+.logo-polaroid img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+  background: #fffaf0;
+  border-radius: 5px;
+}
+
+.logo-polaroid figcaption {
+  margin-top: .75rem;
+  text-align: center;
+  font-family: "Caveat", cursive;
+  font-size: 1.7rem;
+  color: var(--muted);
+}
+
+.logo-polaroid-big { transform: rotate(-4deg); }
+.logo-polaroid-big img { height: 240px; }
+.logo-polaroid-small { transform: translateY(-1rem) rotate(5deg); }
+.logo-polaroid-small img { height: 190px; }
+.logo-polaroid-wide { transform: translateY(1rem) rotate(-2deg); }
+.logo-polaroid-wide img { height: 215px; }
+
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.compare div {
+  padding: 1rem;
+  border-radius: 6px;
+  background: rgba(255, 250, 240, .72);
+  border: 1px solid var(--line);
+}
+
+.back-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: #fff4c7;
+  font-weight: 900;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.back-top.show { opacity: 1; transform: translateY(0); }
+
+footer {
+  padding: 2rem;
+  text-align: center;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+@media (max-width: 860px) {
+  .site-header { align-items: flex-start; flex-direction: column; }
+  .week-nav { justify-content: flex-start; }
+  .week-grid, .object-grid, .logo-grid { grid-template-columns: repeat(2, 1fr); }
+  .logo-collage { grid-template-columns: 1fr; }
+  .logo-polaroid { transform: none; }
+  .compare { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  main { width: min(1120px, calc(100% - 1rem)); margin-top: 1rem; }
+  .week-grid, .object-grid, .logo-grid { grid-template-columns: 1fr; }
+  .cover { min-height: auto; }
+  h1 { font-size: 3.05rem; overflow-wrap: normal; }
+  .hand-note { max-width: 18rem; font-size: 1.28rem; overflow-wrap: anywhere; }
+  .cover { padding: 2rem 1.7rem; overflow: hidden; }
+  .week-nav a { font-size: .95rem; }
+}
